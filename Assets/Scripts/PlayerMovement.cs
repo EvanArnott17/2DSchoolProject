@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         body.position += new Vector2(1, 0) * Time.deltaTime;
+    }
+
+    private void OnMove(InputAction.callbackcontext context)
+    {
+        
     }
 
 
