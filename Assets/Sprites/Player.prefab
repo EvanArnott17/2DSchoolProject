@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Testing::PlayerMovement
   speed: 5
   body: {fileID: 3023110367835166238}
+  _jumpStrength: 5
 --- !u!114 &6228069103726314741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +177,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d7a27e36-0c8e-4f4e-adcd-1e17b15522dd
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9b067f89-7d8f-4dc8-8985-338f0d0db2a7
+    m_ActionName: 'Player/Jump[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 

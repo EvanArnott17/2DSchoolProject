@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D body;
 
+    [SerializeField] private float _jumpStrength = 5f;
+
     private SpriteRenderer playerSprite;
 
     private InputActions _playerInput;
@@ -33,6 +35,15 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
+
+    }
+
+    private void Update()
+    {
+        if (_playerInput.Player.Jump.WasPressedThisFrame())
+        {
+            Jump();
+        }
     }
 
     // Update is called once per frame
@@ -40,11 +51,10 @@ public class PlayerMovement : MonoBehaviour
     {
         _moveDirection = _playerInput.Player.Move.ReadValue<Vector2>();
 
-        _moveDirection = new Vector2(_moveDirection.x, _moveDirection.y);
+        body.linearVelocity = new Vector2(_moveDirection.x * speed, body.linearVelocity.y);
 
         ChangePlayerDirection(_moveDirection);
 
-        body.linearVelocity = _moveDirection * speed;
     }
 
     private void ChangePlayerDirection(Vector2 direction)
@@ -58,6 +68,12 @@ public class PlayerMovement : MonoBehaviour
         {
             playerSprite.flipX = false;
         }
+    }
+
+    private void Jump()
+    {
+        body.AddForce(Vector2.up * _jumpStrength, ForceMode2D.Impulse);
+        Debug.Log("Jump Pressed");
     }
 
 
