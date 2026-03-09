@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Death_Zone : MonoBehaviour
 {
-    [SerializeField] private Vector2 respawnPoint;
 
     [SerializeField] private GameObject pinball;
 
@@ -11,16 +10,8 @@ public class Death_Zone : MonoBehaviour
         if (collision.GetComponent<Rigidbody2D>() == true)
         {
             Debug.Log("Player Dead");
-            collision.gameObject.SetActive(false);
-
-            Invoke("RespawnPinball", 0.5f);
+            GameManager.instance.OnPlayerDied();
         }
-    }
-
-    private void RespawnPinball()
-    {
-        pinball.transform.position = respawnPoint;
-        pinball.SetActive(true);
     }
 
     
