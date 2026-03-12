@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6844706895218992045}
   - component: {fileID: 5135364995663207603}
   - component: {fileID: 7095323203460734388}
-  - component: {fileID: 11254727961994798}
+  - component: {fileID: 2512190699227103907}
   m_Layer: 0
   m_Name: Invader
   m_TagString: Enemy
@@ -167,7 +167,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &11254727961994798
+--- !u!114 &2512190699227103907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 350706733355906017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bce9755c5edcb647bc4ae1a3900d61e, type: 3}
+  m_Script: {fileID: 11500000, guid: f677ce5d689727f4ba3776ec0fc020af, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StaticObjectDrift
+  m_EditorClassIdentifier: Assembly-CSharp::InvadersMovement
+  _speed: 3

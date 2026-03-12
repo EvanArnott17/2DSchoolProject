@@ -27,21 +27,21 @@ public class ShipMovement : MonoBehaviour
     private void Update()
     {
         /////Asteriods style controls
-        _moveInput = _inputs.Player.Move.ReadValue<Vector2>();
+        //_moveInput = _inputs.Player.Move.ReadValue<Vector2>();
 
         ////Spin ship keys
-        transform.Rotate(0, 0, -_moveInput.x *  _rotationSpeed * Time.deltaTime);
-        transform.Translate(new Vector2(0, _moveInput.y) *  _moveSpeed * Time.deltaTime, Space.Self);
+        //transform.Rotate(0, 0, -_moveInput.x *  _rotationSpeed * Time.deltaTime);
+        //transform.Translate(new Vector2(0, _moveInput.y) *  _moveSpeed * Time.deltaTime, Space.Self);
 
 
         //Space Invaders Movement
-        //_moveInput = _inputs.Player.Move.ReadValue<Vector2>();
+        _moveInput = _inputs.Player.Move.ReadValue<Vector2>();
 
-        //transform.Translate(new Vector2(_moveInput.x, 0) * _moveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(new Vector2(_moveInput.x, 0) * _moveSpeed * Time.deltaTime, Space.World);
 
         ////clamping movement to screen bounds
-        //float clampX = Mathf.Clamp(transform.position.x, -11f, 11f);
-        //transform.position = new Vector3(clampX, -4.5f, transform.position.z);
+        float clampX = Mathf.Clamp(transform.position.x, -11f, 11f);
+        transform.position = new Vector3(clampX, -4.5f, transform.position.z);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
