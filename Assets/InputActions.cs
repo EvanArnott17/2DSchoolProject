@@ -172,6 +172,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpawnTest"",
+                    ""type"": ""Button"",
+                    ""id"": ""50069f78-8f39-4327-bcb9-766970185e5d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -317,6 +326,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""SuperLaser"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b83e0dd-97b9-4e2c-94f0-422b2eba50e2"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnTest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -334,6 +354,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_RotateLeft = m_Player.FindAction("RotateLeft", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_SuperLaser = m_Player.FindAction("SuperLaser", throwIfNotFound: true);
+        m_Player_SpawnTest = m_Player.FindAction("SpawnTest", throwIfNotFound: true);
     }
 
     ~@InputActions()
@@ -423,6 +444,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RotateLeft;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_SuperLaser;
+    private readonly InputAction m_Player_SpawnTest;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -470,6 +492,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/SuperLaser".
         /// </summary>
         public InputAction @SuperLaser => m_Wrapper.m_Player_SuperLaser;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SpawnTest".
+        /// </summary>
+        public InputAction @SpawnTest => m_Wrapper.m_Player_SpawnTest;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -523,6 +549,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @SuperLaser.started += instance.OnSuperLaser;
             @SuperLaser.performed += instance.OnSuperLaser;
             @SuperLaser.canceled += instance.OnSuperLaser;
+            @SpawnTest.started += instance.OnSpawnTest;
+            @SpawnTest.performed += instance.OnSpawnTest;
+            @SpawnTest.canceled += instance.OnSpawnTest;
         }
 
         /// <summary>
@@ -561,6 +590,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @SuperLaser.started -= instance.OnSuperLaser;
             @SuperLaser.performed -= instance.OnSuperLaser;
             @SuperLaser.canceled -= instance.OnSuperLaser;
+            @SpawnTest.started -= instance.OnSpawnTest;
+            @SpawnTest.performed -= instance.OnSpawnTest;
+            @SpawnTest.canceled -= instance.OnSpawnTest;
         }
 
         /// <summary>
@@ -664,5 +696,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSuperLaser(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SpawnTest" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpawnTest(InputAction.CallbackContext context);
     }
 }

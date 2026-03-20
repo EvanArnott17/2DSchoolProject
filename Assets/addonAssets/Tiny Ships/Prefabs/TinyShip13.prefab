@@ -195,7 +195,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2
+  m_Radius: 10
 --- !u!114 &2421147269254781156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InvaderShoot
   _laser: {fileID: 7687507845934702294, guid: d2fe1f5df00a68b40a7f0b13b61f0d56, type: 3}
   _firePoint: {fileID: 8940083337702407083}
+  _stats: {fileID: 11400000, guid: d758a37b9f26ddb43b5cce7a61f688c6, type: 2}
 --- !u!1 &1469165539457527223
 GameObject:
   m_ObjectHideFlags: 0

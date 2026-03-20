@@ -546,6 +546,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &907455215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907455217}
+  - component: {fileID: 907455216}
+  m_Layer: 0
+  m_Name: SpawnTester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &907455216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907455215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d2687a30ba6e444afc86d4e417941b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TestSpawner
+  _enemyPrefabs:
+  - {fileID: 388088347521277833, guid: 4b2440254a72aa44298d64b62f88f96b, type: 3}
+  - {fileID: 4282064783333856513, guid: e94b21303b363364d88dbf46712060e5, type: 3}
+--- !u!4 &907455217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907455215}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.14, y: -0.31143, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1371510576
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +636,7 @@ Transform:
   m_GameObject: {fileID: 1371510576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 3.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -607,6 +654,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71fe64c7bf9d9042bbc74ca68c16aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FleetManager
+  _shootTimer: 0
+  _maxVolleys: 3
 --- !u!1 &1834771319
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,3 +822,4 @@ SceneRoots:
   - {fileID: 553444491}
   - {fileID: 1834771321}
   - {fileID: 1371510578}
+  - {fileID: 907455217}
